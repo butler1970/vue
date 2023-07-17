@@ -1,5 +1,5 @@
 # Introduction
-This vue application was initialized in using Docker and the following command line instructions.
+This vue application was initialized using Docker and the following command line instructions.
 
 ```
 mkdir vue && cd "$_" && docker run --rm -v "${PWD}:/$(basename `pwd`)" -w "/$(basename `pwd`)" -it node:lts-alpine sh -c "yarn global add @vue/cli && vue create ."
