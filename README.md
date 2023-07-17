@@ -9,5 +9,5 @@ This vue application was containerized using the following reference.  [vue-with
 
 To execute this container use the following command line instruction in the working directory.
 ```
-docker run -it -p 8000:80 --rm dockerize-vue
+docker run -it -p 80:80 --rm dockerize-vue
 ```
