@@ -75,12 +75,11 @@
     <p>Here are some links to companies I've worked for in the past. Please note the gaps in between are merely because
       some employers don't have websites I can reference and are not a result of gaps in my employment.</p>
 
-    <li><a href="https://www.espritcam.com/about">D.P. Technologies</a> <b>2000 to 2003</b></li>
-    <li><a href="https://en.wikipedia.org/wiki/First_Data">First Data Corp.</a> acquired by <a
-        href="https://www.fiserv.com/en.html">Fiserv</a> <b>2003 to 2004</b></li>
-    <li><a href="https://www.astera.com">Astera</a> <b>2004</b></li>
-    <li><a href="https://www.blockbuster.com">Block Buster</a> <b>2005 to 2009</b></li>
-    <li><a href="https://acquireinteractive.com">Acquire Interactive, LLC</a> <b>2015 to 2023</b></li>
+    <li><a target="_blank" href="https://www.espritcam.com/about">D.P. Technologies</a> <b>2000 to 2003</b></li>
+    <li><a target="_blank" href="https://en.wikipedia.org/wiki/First_Data">First Data Corp.</a> acquired by <a target="_blank" href="https://www.fiserv.com/en.html">Fiserv</a> <b>2003 to 2004</b></li>
+    <li><a target="_blank" href="https://www.astera.com">Astera</a> <b>2004</b></li>
+    <li><a target="_blank" href="https://en.wikipedia.org/wiki/Movielink">Movielink</a> acquired by <a  target="_blank" href="https://www.blockbuster.com">Block Buster</a> <b>2005 to 2009</b></li>
+    <li><a target="_blank" href="https://www.acquireinteractive.com/">Acquire Interactive, LLC</a> <b>2015 to 2023</b></li>
 
     <h2>Specialties</h2>
     <li>C/C++</li>
@@ -101,6 +100,9 @@
     <li>Sigma 6</li>
     <li>Agile, XP</li>
     <li>Kotlin</li>
+    <h2>Contact Information</h2>
+    <li><a target="_blank" href="https://linkedin.com/in/butler1970">LinkedIn</a></li>
+    <li><a target="_blank" href="mailto:butler1970@gmail.com">butler1970@gmail.com</a></li>
     <br/><br/><br/>
   </div>
 </template>
