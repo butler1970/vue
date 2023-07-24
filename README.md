@@ -15,3 +15,9 @@ To launch this application use the following command line instruction in the wor
 ```
 docker compose up
 ```
+
+# References
+- [Vue Router](https://router.vuejs.org/)
+- [Vuetify](https://vuetifyjs.com/en/)
+- [Vuetify Navigation Drawer Examples](https://codingbeautydev.com/blog/vuetify-navigation-drawer/)
+- [Vue 3 & Vue Router Tutorial](https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/)
