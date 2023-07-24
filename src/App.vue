@@ -42,6 +42,7 @@ export default {
     drawer: false,
     items: [
       {title: 'Home', icon: 'mdi-view-dashboard', route: '/'},
+      {title: 'MyIP', icon: 'mdi-tools', route: '/my-ip'},
       {title: 'About', icon: 'mdi-account-box', route: '/about'},
     ],
   }),

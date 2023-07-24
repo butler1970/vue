@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import HomePage from "../components/HomePage.vue";
 import AboutPage from "../components/AboutPage.vue";
+import MyIPPage from "../components/MyIPPage.vue";
 
 const routes = [
     {
@@ -12,6 +13,11 @@ const routes = [
         path: "/about",
         name: "About",
         component: AboutPage,
+    },
+    {
+        path: "/my-ip",
+        name: "MyIP",
+        component: MyIPPage,
     },
 ];
 
