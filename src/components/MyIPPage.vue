@@ -1,12 +1,31 @@
 <template>
   <div class="myip">
     <h1>My IP Page</h1>
+    <p>My ip address is {{ this.ip_address }}.</p>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  name: 'MyIPPage'
+  name: 'MyIPPage',
+  data() {
+    return {
+      ip_address: null,
+    }
+  },
+  created() {
+    this.getIpAddress()
+  },
+  methods: {
+    getIpAddress() {
+      axios.get("http://localhost:8080/api/get_ip_address")
+          .then(response => {
+            this.ip_address = response.data;
+          });
+    }
+  }
 }
 </script>
 
