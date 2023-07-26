@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     getIpAddress() {
-      axios.get("http://localhost:8080/api/get_ip_address")
+      axios.get(`${process.env.VUE_APP_API_HOST}/api/get_ip_address`)
           .then(response => {
             this.ip_address = response.data;
           });
