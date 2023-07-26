@@ -1,7 +1,7 @@
 runtime: custom
 env: flex
 # If you have one application, please use "default" for service
-service: default
+service: frontend
 # VPC Network if you have one
 #network:
 #  name: default
