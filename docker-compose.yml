@@ -6,6 +6,7 @@ services:
       context: .
       target: 'develop-stage'
     ports:
+      - '443:8080'
       - '80:8080'
     volumes:
       - '.:/app'

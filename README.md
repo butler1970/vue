@@ -16,6 +16,12 @@ To launch this application use the following command line instruction in the wor
 docker compose up
 ```
 
+## Proxy forwarding using ngrok
+- Enable SSL configuration vue.config.js
+```
+ngrok http --host-header=rewrite https://localhost
+```
+
 # References
 - [Vue Router](https://router.vuejs.org/)
 - [Vuetify](https://vuetifyjs.com/en/)
