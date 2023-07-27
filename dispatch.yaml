@@ -1,0 +1,3 @@
+dispatch:
+  - url: "api.internettools.app/*"
+    service: api
