@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <h1>Home Page</h1>
+    <h1>Welcome to InternetTools.app!</h1>
+    <p>Here you will find a number of tools to help you with your IT tasks to save you the trouble of having to write shell scripts to get at information that is commonly needed in your everyday IT life. </p>
+    <p>Please, use the menu bar on your left to access these tools.</p>
+    <p>If you find a need for other tools which are not provided here please consider leaving the administrator some helpful feature requests and we'll be happy to accommodate you.</p>
   </div>
 </template>
 

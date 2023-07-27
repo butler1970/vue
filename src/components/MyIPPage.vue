@@ -1,7 +1,8 @@
 <template>
   <div class="myip">
     <h1>My IP Page</h1>
-    <p>My ip address is {{ this.ip_address }}.</p>
+    <p>According to ipify.org my ip address is <b>{{ this.ip_address_according_to_ipify }}</b>.</p>
+    <p>According to internettools.app, my ip address is <b>{{ this.ip_address_according_to_api }}</b>.</p>
   </div>
 </template>
 
@@ -12,7 +13,8 @@ export default {
   name: 'MyIPPage',
   data() {
     return {
-      ip_address: null,
+      ip_address_according_to_ipify: null,
+      ip_address_according_to_api: null
     }
   },
   created() {
@@ -20,9 +22,16 @@ export default {
   },
   methods: {
     getIpAddress() {
-      axios.get(`${process.env.VUE_APP_API_HOST}/api/get_ip_address`)
+      const ipifyUrl = "https://api.ipify.org?format=json"
+      axios.get(ipifyUrl)
           .then(response => {
-            this.ip_address = response.data;
+            this.ip_address_according_to_ipify = response.data.ip;
+          });
+
+      const apiUrl = `${process.env.VUE_APP_API_HOST}/api/get_ip_address?XDEBUG_SESSION_START=LARAVEL_SAIL`
+      axios.get(apiUrl)
+          .then(response => {
+            this.ip_address_according_to_api = response.data;
           });
     }
   }
