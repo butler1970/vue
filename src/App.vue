@@ -30,7 +30,7 @@
     </div>
 
     <v-footer color="grey" app>
-      <span>© 2023 butler1970.com</span>
+      <span>© 2023 internettools.app</span>
     </v-footer>
   </v-app>
 </template>
