@@ -11,7 +11,7 @@ const defaultTheme = {
         surface: '#FFFFFF',
         primary: '#000000',
         'primary-darken-1': '#3700B3',
-        secondary: '#03DAC6',
+        secondary: '#FFFFFF',
         'secondary-darken-1': '#018786',
         error: '#B00020',
         info: '#2196F3',
