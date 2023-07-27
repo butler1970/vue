@@ -1,28 +1,30 @@
 <template>
   <h1>MyIP</h1>
-  <p>Welcome to the MyIP page.  Below you should find your external ip address as reported by the service <a target="_blank" href="https://ipify.org">ipify API</a>.</p>
-  <v-container grid-list-md text-xs-center>
+  <p>Welcome to the MyIP page.  Below you should find your external ip address as reported by the service <a target="_blank" href="https://ipify.org">ipify API</a>.  For your convenience, you may click on the ip address of your choice to copy the value to your browser's clip board.</p>
+  <p></p>
+  <v-container fluid>
     <v-layout align-center justify-center row fill-height>
       <v-flex xs6><v-card color="primary"><v-card-text class="px-lg-16">ipify ipv4</v-card-text></v-card></v-flex>
-      <v-flex xs6><v-card color="secondary"><v-card-text class="px-lg-16"><b>{{ this.ipify_ipv4 }}</b></v-card-text></v-card></v-flex>
+      <v-flex xs6><v-card color="secondary"><v-card-text class="px-lg-16"><v-btn @click="copy(ipify_ipv4)">{{ this.ipify_ipv4 }}</v-btn></v-card-text></v-card></v-flex>
     </v-layout>
   </v-container>
   <v-container grid-list-md text-xs-center>
     <v-layout align-center justify-center row fill-height>
       <v-flex xs6><v-card color="primary"><v-card-text class="px-lg-14">ipify ipv4/6</v-card-text></v-card></v-flex>
-      <v-flex xs6><v-card color="secondary"><v-card-text class="px-lg-16"><b>{{ this.ipify_ipv6 }}</b></v-card-text></v-card></v-flex>
+      <v-flex xs6><v-card color="secondary"><v-card-text class="px-lg-16"><v-btn @click="copy(ipify_ipv6)">{{ this.ipify_ipv6 }}</v-btn></v-card-text></v-card></v-flex>
     </v-layout>
   </v-container>
   <v-container grid-list-md text-xs-center>
     <v-layout align-center justify-center row fill-height>
       <v-flex xs6><v-card color="primary"><v-card-text class="px-lg-16">api ipv4</v-card-text></v-card></v-flex>
-      <v-flex xs6><v-card color="secondary"><v-card-text class="px-lg-16"><b>{{ this.api_ipv4 }}</b></v-card-text></v-card></v-flex>
+      <v-flex xs6><v-card color="secondary"><v-card-text class="px-lg-16"><v-btn @click="copy(api_ipv4)">{{ this.api_ipv4 }}</v-btn></v-card-text></v-card></v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
 import axios from 'axios';
+import { Clipboard } from 'v-clipboard';
 
 export default {
   name: 'MyIPPage',
@@ -53,11 +55,18 @@ export default {
           .then(response => {
             this.api_ipv4 = response.data;
           });
+    },
+    copy(e) {
+      Clipboard.copy(e);
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+p {
+  text-align: left;
+}
+</style>
 

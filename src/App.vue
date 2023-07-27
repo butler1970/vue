@@ -25,9 +25,11 @@
       </v-list>
     </v-navigation-drawer>
 
-    <div class="content">
-      <router-view/>
-    </div>
+    <v-main>
+      <div class="content">
+        <router-view/>
+      </div>
+    </v-main>
 
     <v-footer color="grey" app>
       <span>© 2023 internettools.app</span>
