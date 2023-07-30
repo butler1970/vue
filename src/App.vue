@@ -26,9 +26,9 @@
     </v-navigation-drawer>
 
     <v-main>
-      <div class="content">
+      <v-container>
         <router-view/>
-      </div>
+      </v-container>
     </v-main>
 
     <v-footer color="grey" app>
@@ -45,6 +45,7 @@ export default {
     items: [
       {title: 'Home', icon: 'mdi-home', route: '/'},
       {title: 'MyIP', icon: 'mdi-tools', route: '/my-ip'},
+      {title: 'Base64', icon: 'mdi-tools', route: '/base64'},
       {title: 'About', icon: 'mdi-account-box', route: '/about'},
     ],
   }),

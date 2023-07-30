@@ -5,17 +5,32 @@
     <a target="_blank" href="https://ipify.org">ipify API</a>.  For your convenience, you may click on the ip address
     of your choice to copy the value to your browser's clip board.</p>
 
-  <v-container fluid>
-    <v-layout align-center justify-center row fill-height>
-      <v-flex><v-card color="primary"><v-card-text>ipify ipv4</v-card-text></v-card></v-flex>
-      <v-flex><v-card color="secondary"><v-card-text><v-btn @click="copy(ipify_ipv4)">{{ this.ipify_ipv4 }}</v-btn></v-card-text></v-card></v-flex>
-    </v-layout>
-  </v-container>
-  <v-container fluid>
-    <v-layout align-center justify-center row fill-height>
-      <v-flex><v-card color="primary"><v-card-text>ipify ipv4/6</v-card-text></v-card></v-flex>
-      <v-flex><v-card color="secondary"><v-card-text><v-btn @click="copy(ipify_ipv6)">{{ this.ipify_ipv6 }}</v-btn></v-card-text></v-card></v-flex>
-    </v-layout>
+  <v-container>
+    <v-row no-gutters>
+      <v-col cols="12" md="6">
+        <v-sheet color="primary" class="pa-2 ma-2">
+          ipify ipv4
+        </v-sheet>
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-sheet color="secondary" class="pa-2 ma-2">
+          <v-btn @click="copy(ipify_ipv4)">{{ this.ipify_ipv4 }}</v-btn>
+        </v-sheet>
+      </v-col>
+    </v-row>
+
+    <v-row no-gutters>
+      <v-col cols="12" md="6">
+        <v-sheet color="primary" class="pa-2 ma-2">
+          ipify ipv4 or ipv6
+        </v-sheet>
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-sheet color="secondary" class="pa-2 ma-2">
+          <v-btn @click="copy(ipify_ipv6)">{{ this.ipify_ipv6 }}</v-btn>
+        </v-sheet>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
