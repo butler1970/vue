@@ -20,7 +20,7 @@
     <v-row no-gutters>
       <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-text-field label="Value" v-model="base64Encode.input"></v-text-field>
+          <v-text-field label="Value" v-model="base64Encode.input" clearable clear-icon="mdi-close-circle"></v-text-field>
         </v-sheet>
       </v-col>
       <v-col cols="12" md="2">
@@ -50,7 +50,7 @@
     <v-row no-gutters>
       <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-textarea label="Value" v-model="base64Decode.input"></v-textarea>
+          <v-textarea label="Value" v-model="base64Decode.input" clearable clear-icon="mdi-close-circle"></v-textarea>
         </v-sheet>
       </v-col>
       <v-col cols="12" md="2">
