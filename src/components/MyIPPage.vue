@@ -67,7 +67,7 @@ export default {
     },
     copy(e) {
       Clipboard.copy(e);
-    }
+    },
   }
 }
 </script>

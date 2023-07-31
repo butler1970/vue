@@ -32,7 +32,7 @@
     <v-row no-gutters>
       <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-textarea label="Result" v-model="base64Encode.result"></v-textarea>
+          <v-textarea label="Click to copy" v-model="base64Encode.result" readonly @click="copy(base64Encode.result)"></v-textarea>
         </v-sheet>
       </v-col>
     </v-row>
@@ -43,7 +43,7 @@
     <v-row no-gutters>
       <v-col cols="12">
         <v-sheet color="primary" class="pa-2 ma-2">
-          Base64 Encode
+          Base64 Decode
         </v-sheet>
       </v-col>
     </v-row>
@@ -62,7 +62,7 @@
     <v-row no-gutters>
       <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-text-field label="Result" v-model="base64Decode.result"></v-text-field>
+          <v-text-field label="Click to copy" v-model="base64Decode.result" readonly @click="copy(base64Decode.result)"></v-text-field>
         </v-sheet>
       </v-col>
     </v-row>
@@ -71,6 +71,8 @@
 </template>
 
 <script>
+import { Clipboard } from 'v-clipboard';
+
 export default {
   name: 'Base64Page',
   data() {
@@ -91,7 +93,10 @@ export default {
     },
     decode(input) {
       this.base64Decode.result = atob(input);
-    }
+    },
+    copy(e) {
+      Clipboard.copy(e);
+    },
   }
 }
 </script>
