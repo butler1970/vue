@@ -37,6 +37,10 @@
 
     <h3>Message Queues</h3>
     <p>MSMQ, SQS</p>
+
+    <h3>Contact Information</h3>
+    <li><a target="_blank" href="https://linkedin.com/in/butler1970">LinkedIn</a></li>
+    <li><a target="_blank" href="mailto:butler1970@gmail.com">butler1970@gmail.com</a></li>
   </div>
 </template>
 
