@@ -1,7 +1,7 @@
 <template>
   <v-sheet>
     <v-container>
-      <img alt="Vue logo" src="../assets/logo.png">
+      <img alt="It's a new dawn" src="../assets/logo.png">
     </v-container>
   </v-sheet>
 
