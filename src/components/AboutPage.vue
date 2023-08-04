@@ -14,28 +14,28 @@
     <p>I have very strong object oriented development skills, experience with application design patterns and enterprise integration patterns.  I have implemented these patterns in various programming languages including C/C++, C#, Java, Kotlin, PHP.</p>
     <p>I have worked with numerous relational database management systems including Microsoft SQL, Oracle and MySQL.  I'm familiar with writing stored procedures, creating normalized schemas and enforcing referential integrity using foreign key constraints, triggers, etc.</p>
 
-    <h2>Languages</h2>
+    <h3>Languages</h3>
     <p>PHP, Javascript, Kotlin, Java, C#, C/C++</p>
 
-    <h2>AWS Technologies</h2>
+    <h3>AWS Technologies</h3>
     <p>AWS SDK for PHP, AWS SDK for Java, AWS SDK for Kotlin, RDS, SQS, SNS, SES, ElastiCache, Kinesis, Code Pipeline, Route53, CloudFront</p>
 
-    <h2>PHP Frameworks</h2>
+    <h3>PHP Frameworks</h3>
     <p>ZendFramework/ZF2, CakePHP, WordPress, Symfony</p>
 
-    <h2>Operating Systems</h2>
+    <h3>Operating Systems</h3>
     <p>Windows 95/98/2000, XP, Vista, HP/UX, SunOS, Linux (Ubuntu, Debian, RedHat, CentOS, Amazon Linux), MacOS</p>
 
-    <h2>RDBMS</h2>
+    <h3>RDBMS</h3>
     <p>MS SQL 6/2000, MySQL, Oracle 8i</p>
 
-    <h2>Web Servers</h2>
+    <h3>Web Servers</h3>
     <p>Apache, IIS, Ktor</p>
 
-    <h2>Application Servers</h2>
+    <h3>Application Servers</h3>
     <p>Tomcat</p>
 
-    <h2>Message Queues</h2>
+    <h3>Message Queues</h3>
     <p>MSMQ, SQS</p>
   </div>
 </template>
@@ -59,6 +59,7 @@ h2 {
 
 h3 {
   margin: 40px 0 0;
+  text-align: left;
 }
 
 h4 {
