@@ -4,7 +4,7 @@ services:
   frontend:
     build:
       context: .
-      target: 'develop-stage'
+      target: 'build-stage'
     ports:
       - '443:8080'
       - '80:8080'
