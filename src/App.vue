@@ -46,6 +46,7 @@ export default {
       {title: 'Home', icon: 'mdi-home', route: '/'},
       {title: 'MyIP', icon: 'mdi-tools', route: '/my-ip'},
       {title: 'Base64', icon: 'mdi-tools', route: '/base64'},
+      {title: 'EncodeURL', icon: 'mdi-tools', route: '/encode-url'},
       {title: 'About', icon: 'mdi-account-box', route: '/about'},
     ],
   }),

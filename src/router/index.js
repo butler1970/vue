@@ -3,6 +3,7 @@ import HomePage from "@/components/HomePage.vue";
 import AboutPage from "@/components/AboutPage.vue";
 import MyIPPage from "@/components/MyIPPage.vue";
 import Base64Page from "@/components/Base64Page.vue";
+import EncodeURLPage from "@/components/EncodeURLPage.vue"
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         path: "/base64",
         name: "Base64",
         component: Base64Page,
+    },
+    {
+        path: "/encode-url",
+        name: "EncodeURL",
+        component: EncodeURLPage,
     },
 ];
 

@@ -1,38 +1,38 @@
 <template>
-  <h1>Base64</h1>
+  <h1>EncodeURL</h1>
 
-  <p>Welcome to the Base64 page.  Below you will find helpers to base64 encode and decode a value.  The helpers use
-  the javascript functions <b>atob</b> and <b>btoa</b>.  For more information about these functions you can refer
+  <p>Welcome to the EncodeURL page.  Below you will find helpers to encode and decode a uri.  The helpers use
+  the javascript functions <b>encodeURI</b> and <b>decodeURI</b>.  For more information about these functions you can refer
   to the following MDN documentation,
-    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/Base64">Javascript Base64</a>.
-    For more information on the purpose of Base64, you can refer to the Wikipedia article,
-    <a target="_blank" href="https://en.wikipedia.org/wiki/Base64">Base64</a>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI">encodeURI</a>.
+    For more information on the purpose of url encoding, you can refer to the Wikipedia article,
+    <a target="_blank" href="https://en.wikipedia.org/wiki/URL_encoding">URL encoding</a>
   </p>
 
   <v-container>
     <v-row no-gutters>
       <v-col cols="12">
         <v-sheet color="primary" class="pa-2 ma-2">
-          Base64 Encode
+          URL Encode
         </v-sheet>
       </v-col>
     </v-row>
     <v-row no-gutters>
       <v-col cols="12" md="10">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-textarea label="Value" v-model="base64Encode.input" clearable clear-icon="mdi-close-circle"></v-textarea>
+          <v-textarea label="Value" v-model="urlEncode.input" clearable clear-icon="mdi-close-circle"></v-textarea>
         </v-sheet>
       </v-col>
       <v-col cols="12" md="2">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-btn @click="encode(base64Encode.input)">Encode</v-btn>
+          <v-btn @click="encode(urlEncode.input)">Encode</v-btn>
         </v-sheet>
       </v-col>
     </v-row>
     <v-row no-gutters>
       <v-col cols="12">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-textarea label="Click to copy" v-model="base64Encode.result" readonly @click="copy(base64Encode.result)"></v-textarea>
+          <v-textarea label="Click to copy" v-model="urlEncode.result" readonly @click="copy(urlEncode.result)"></v-textarea>
         </v-sheet>
       </v-col>
     </v-row>
@@ -43,26 +43,26 @@
     <v-row no-gutters>
       <v-col cols="12">
         <v-sheet color="primary" class="pa-2 ma-2">
-          Base64 Decode
+          URL Decode
         </v-sheet>
       </v-col>
     </v-row>
     <v-row no-gutters>
       <v-col cols="12" md="10">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-textarea label="Value" v-model="base64Decode.input" clearable clear-icon="mdi-close-circle"></v-textarea>
+          <v-textarea label="Value" v-model="urlDecode.input" clearable clear-icon="mdi-close-circle"></v-textarea>
         </v-sheet>
       </v-col>
       <v-col cols="12" md="2">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-btn @click="decode(base64Decode.input)">Decode</v-btn>
+          <v-btn @click="decode(urlDecode.input)">Decode</v-btn>
         </v-sheet>
       </v-col>
     </v-row>
     <v-row no-gutters>
       <v-col cols="12">
         <v-sheet color="secondary" class="pa-2 ma-2">
-          <v-textarea label="Click to copy" v-model="base64Decode.result" readonly @click="copy(base64Decode.result)"></v-textarea>
+          <v-textarea label="Click to copy" v-model="urlDecode.result" readonly @click="copy(urlDecode.result)"></v-textarea>
         </v-sheet>
       </v-col>
     </v-row>
@@ -74,14 +74,14 @@
 import { Clipboard } from 'v-clipboard';
 
 export default {
-  name: 'Base64Page',
+  name: 'EncodeURLPage',
   data() {
     return {
-      base64Encode: {
+      urlEncode: {
         input: null,
         result: null,
       },
-      base64Decode: {
+      urlDecode: {
         input: null,
         result: null,
       },
@@ -89,10 +89,10 @@ export default {
   },
   methods: {
     encode(input) {
-      this.base64Encode.result = btoa(input);
+      this.urlEncode.result = encodeURI(input);
     },
     decode(input) {
-      this.base64Decode.result = atob(input);
+      this.urlDecode.result = decodeURI(input);
     },
     copy(e) {
       Clipboard.copy(e);
