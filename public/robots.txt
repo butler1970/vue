@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://internettools.app/sitemap.txt
