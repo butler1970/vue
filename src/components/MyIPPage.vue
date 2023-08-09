@@ -36,6 +36,11 @@
       </v-col>
     </v-row>
   </v-container>
+
+  <v-snackbar v-model="copiedToast.show" :timeout="copiedToast.timeout">
+    Copied!
+  </v-snackbar>
+
 </template>
 
 <script>
@@ -48,6 +53,10 @@ export default {
     return {
       ipify_ipv4: null,
       ipify_ipv6: null,
+      copiedToast: {
+        show: false,
+        timeout: 2000,
+      },
     }
   },
   created() {
@@ -67,6 +76,7 @@ export default {
     },
     copy(e) {
       Clipboard.copy(e);
+      this.copiedToast.show = true;
     },
   }
 }

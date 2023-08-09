@@ -68,6 +68,9 @@
     </v-row>
   </v-container>
 
+  <v-snackbar v-model="copiedToast.show" :timeout="copiedToast.timeout">
+    Copied!
+  </v-snackbar>
 </template>
 
 <script>
@@ -85,6 +88,10 @@ export default {
         input: null,
         result: null,
       },
+      copiedToast: {
+        show: false,
+        timeout: 2000,
+      },
     }
   },
   methods: {
@@ -96,6 +103,7 @@ export default {
     },
     copy(e) {
       Clipboard.copy(e);
+      this.copiedToast.show = true;
     },
   }
 }
