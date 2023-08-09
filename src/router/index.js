@@ -4,6 +4,7 @@ import AboutPage from "@/components/AboutPage.vue";
 import MyIPPage from "@/components/MyIPPage.vue";
 import Base64Page from "@/components/Base64Page.vue";
 import EncodeURLPage from "@/components/EncodeURLPage.vue"
+import AsciiPage from "@/components/AsciiPage.vue"
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         path: "/encode-url",
         name: "EncodeURL",
         component: EncodeURLPage,
+    },
+    {
+        path: "/ascii",
+        name: "Ascii",
+        component: AsciiPage,
     },
 ];
 
