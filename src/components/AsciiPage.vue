@@ -7,26 +7,20 @@
     <a target="_blank" href="https://en.wikipedia.org/wiki/ASCII">ASCII</a></p>
 
   <v-container>
-    <v-table>
-      <thead>
-        <tr color="primary">
-          <th class="text-center">Decimal</th>
-          <th class="text-center">Binary</th>
-          <th class="text-center">Octal</th>
-          <th class="text-center">Hex</th>
-          <th class="text-center">Char</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="n in 128" :key="n">
-          <td>{{ n - 1 }}</td>
-          <td>{{ (n - 1).toString(2) }}</td>
-          <td>{{ (n - 1).toString(8) }}</td>
-          <td>{{ (n - 1).toString(16) }}</td>
-          <td>{{ toChar(n - 1) }}</td>
-        </tr>
-      </tbody>
-    </v-table>
+    <v-row>
+      <v-col cols="3" md="2"><v-sheet color="primary" class="pa-2 ma-2">Decimal</v-sheet></v-col>
+      <v-col cols="3" md="2"><v-sheet color="primary" class="pa-2 ma-2">Binary</v-sheet></v-col>
+      <v-col cols="3" md="2"><v-sheet color="primary" class="pa-2 ma-2">Octal</v-sheet></v-col>
+      <v-col cols="3" md="2"><v-sheet color="primary" class="pa-2 ma-2">Hex</v-sheet></v-col>
+      <v-col cols="12" md="2"><v-sheet color="primary" class="pa-2 ma-2">Char</v-sheet></v-col>
+    </v-row>
+    <v-row v-for="n in 128" :key="n">
+      <v-col cols="3" md="2"><v-sheet color="secondary" class="ma-2 pa-2">{{ n - 1 }}</v-sheet></v-col>
+      <v-col cols="3" md="2"><v-sheet color="secondary" class="ma-2 pa-2">{{ (n - 1).toString(2) }}</v-sheet></v-col>
+      <v-col cols="3" md="2"><v-sheet color="secondary" class="ma-2 pa-2">{{ (n - 1).toString(2) }}</v-sheet></v-col>
+      <v-col cols="3" md="2"><v-sheet color="secondary" class="ma-2 pa-2">{{ (n - 1).toString(2) }}</v-sheet></v-col>
+      <v-col cols="12" md="2"><v-sheet color="secondary" class="ma-2 pa-2">{{ toChar(n-1) }}</v-sheet></v-col>
+    </v-row>
   </v-container>
 
 </template>
