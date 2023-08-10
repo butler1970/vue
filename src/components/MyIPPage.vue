@@ -11,12 +11,12 @@
 
   <v-container>
     <v-row no-gutters>
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="2">
         <v-sheet color="primary" class="pa-2 ma-2">
           ipify ipv4
         </v-sheet>
       </v-col>
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="4">
         <v-sheet color="secondary" class="pa-2 ma-2">
           <v-btn @click="copy(ipify_ipv4)">{{ this.ipify_ipv4 }}</v-btn>
         </v-sheet>
@@ -24,17 +24,70 @@
     </v-row>
 
     <v-row no-gutters>
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="2">
         <v-sheet color="primary" class="pa-2 ma-2">
           ipify ipv4 or ipv6
         </v-sheet>
       </v-col>
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="4">
         <v-sheet color="secondary" class="pa-2 ma-2">
           <v-btn @click="copy(ipify_ipv6)">{{ this.ipify_ipv6 }}</v-btn>
         </v-sheet>
       </v-col>
     </v-row>
+
+    <v-row no-gutters>
+      <v-col cols="12" md="2">
+        <v-sheet color="primary" class="pa-2 ma-2">
+          ISP
+        </v-sheet>
+      </v-col>
+      <v-col cols="12" md="4">
+        <v-sheet color="secondary" class="pa-2 ma-2">
+          {{ this.geoLocationData?.traits?.isp }}
+        </v-sheet>
+      </v-col>
+    </v-row>
+
+    <v-row no-gutters>
+      <v-col cols="12" md="2">
+        <v-sheet color="primary" class="pa-2 ma-2">
+          Country
+        </v-sheet>
+      </v-col>
+      <v-col cols="12" md="4">
+        <v-sheet color="secondary" class="pa-2 ma-2">
+          {{ this.geoLocationData?.country?.names?.en }}
+        </v-sheet>
+      </v-col>
+    </v-row>
+
+    <v-row no-gutters>
+      <v-col cols="12" md="2">
+        <v-sheet color="primary" class="pa-2 ma-2">
+          City
+        </v-sheet>
+      </v-col>
+      <v-col cols="12" md="4">
+        <v-sheet color="secondary" class="pa-2 ma-2">
+          {{ this.geoLocationData?.city?.names?.en }}
+        </v-sheet>
+      </v-col>
+    </v-row>
+
+    <v-row no-gutters>
+      <v-col cols="12" md="2">
+        <v-sheet color="primary" class="pa-2 ma-2">
+          State
+        </v-sheet>
+      </v-col>
+      <v-col cols="12" md="4">
+        <v-sheet color="secondary" class="pa-2 ma-2">
+          {{ this.geoLocationData?.subdivisions[0]?.iso_code }}
+        </v-sheet>
+      </v-col>
+    </v-row>
+
   </v-container>
 
   <v-snackbar v-model="copiedToast.show" :timeout="copiedToast.timeout">
@@ -53,10 +106,23 @@ export default {
     return {
       ipify_ipv4: null,
       ipify_ipv6: null,
+      geoLocationData: null,
       copiedToast: {
         show: false,
         timeout: 2000,
       },
+    }
+  },
+  watch: {
+    ipify_ipv4(newValue, oldValue) {
+      console.log(`ipv4 changed from ${oldValue} to ${newValue}... getting geo location data...`);
+      axios.post('https://api.internettools.app/api/ip/location', {ip: this.ipify_ipv4})
+          .then(response => {
+            this.geoLocationData = response.data;
+          });
+    },
+    geoLocationData(newValue) {
+      console.log('Geo location data has been updated...', newValue);
     }
   },
   created() {
@@ -80,6 +146,7 @@ export default {
     },
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
