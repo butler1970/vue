@@ -7,25 +7,27 @@
     <a target="_blank" href="https://en.wikipedia.org/wiki/ASCII">ASCII</a></p>
 
   <v-container>
-    <v-row no-gutters>
-      <v-col v-for="n in 128" :key="n" cols="12" md="1">
-        <v-sheet color="primary" class="pa-2 ma-2">
-          <span>{{ n  - 1 }}</span>
-        </v-sheet>
-        <v-sheet color="primary" class="pa-2 ma-2">
-          <span>{{ (n - 1).toString(2) }}</span>
-        </v-sheet>
-        <v-sheet color="primary" class="pa-2 ma-2">
-          <span>{{ (n - 1).toString(8) }}</span>
-        </v-sheet>
-        <v-sheet color="primary" class="pa-2 ma-2">
-          <span>{{ (n - 1).toString(16) }}</span>
-        </v-sheet>
-        <v-sheet color="secondary" class="pa-2 ma-2">
-          <span>{{ toChar(n - 1) }}</span>
-        </v-sheet>
-      </v-col>
-    </v-row>
+    <v-table>
+      <thead>
+        <tr color="primary">
+          <th class="text-center">Decimal</th>
+          <th class="text-center">Binary</th>
+          <th class="text-center">Octal</th>
+          <th class="text-center">Hex</th>
+          <th class="text-center">Char</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="n in 128" :key="n">
+          <td>{{ n - 1 }}</td>
+          <td>{{ (n - 1).toString(2) }}</td>
+          <td>{{ (n - 1).toString(8) }}</td>
+          <td>{{ (n - 1).toString(16) }}</td>
+          <td>{{ toChar(n - 1) }}</td>
+        </tr>
+
+      </tbody>
+    </v-table>
   </v-container>
 
 </template>
