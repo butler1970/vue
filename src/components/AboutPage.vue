@@ -41,6 +41,7 @@
     <h3>Contact Information</h3>
     <li>Reach out to me on LinkedIn, <a target="_blank" href="https://linkedin.com/in/butler1970">linkedin.com/in/butler1970</a></li>
     <li>Visit my blog at <a target="_blank" href="https://butler1970.com">butler1970.com</a></li>
+    <li>Check out my github profile at <a target="_blank" href="https://github.com/butler1970">github.com/butler1970</a></li>
     <li>Email me at <a target="_blank" href="mailto:butler1970@gmail.com">butler1970@gmail.com</a></li>
   </div>
 </template>
