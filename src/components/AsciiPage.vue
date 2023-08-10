@@ -25,7 +25,6 @@
           <td>{{ (n - 1).toString(16) }}</td>
           <td>{{ toChar(n - 1) }}</td>
         </tr>
-
       </tbody>
     </v-table>
   </v-container>
