@@ -2,11 +2,15 @@
   <h1>MyIP</h1>
 
   <p>Welcome to the MyIP page.  Below you should find your external ip address as reported by the service
-    <a target="_blank" href="https://ipify.org">ipify API</a>.  For your convenience, you may click on the ip address
+    <a target="_blank" href="https://ipify.org">ipify API</a>.  Also below you will find some geolocation data related
+    to your ip address.  This data is provided by a completely free service,
+    <a target="_blank" href="https://findip.net">FindIP.net</a>.  For your
+    convenience, you may click on the ip address
     of your choice to copy the value to your browser's clip board.  For more information on IPv4 you can refer
   to the Wikipedia article
     <a target="_blank" href="https://en.wikipedia.org/wiki/Internet_Protocol_version_4">IPv4</a>.
-  For more information on IPv6 you can refer to the Wikipedia article <a target="_blank" href="https://en.wikipedia.org/wiki/IPv6">IPv6</a>.
+  For more information on IPv6 you can refer to the Wikipedia article
+    <a target="_blank" href="https://en.wikipedia.org/wiki/IPv6">IPv6</a>.
   </p>
 
   <v-container>
