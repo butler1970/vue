@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar color="primary" class="flex-grow-0" app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-app-bar-title>Internet Tools</v-app-bar-title>
+      <v-app-bar-title class="app-bar-title">Internet Tools</v-app-bar-title>
     </v-app-bar>
     <v-navigation-drawer app v-model="drawer">
       <v-list-item>
@@ -64,8 +64,7 @@ export default {
   margin-top: 60px;
 }
 
-.content {
-  margin: auto;
-  width: 80%;
+.app-bar-title {
+  text-align: left;
 }
 </style>
