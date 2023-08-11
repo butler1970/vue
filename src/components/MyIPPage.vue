@@ -20,7 +20,7 @@
           ipify ipv4
         </v-sheet>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
           <v-btn @click="copy(ipify_ipv4)">{{ this.ipify_ipv4 }}</v-btn>
         </v-sheet>
@@ -33,20 +33,26 @@
           ipify ipv4 or ipv6
         </v-sheet>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
           <v-btn @click="copy(ipify_ipv6)">{{ this.ipify_ipv6 }}</v-btn>
         </v-sheet>
       </v-col>
     </v-row>
+  </v-container>
 
+  <v-container v-if="geoLocationData == null">
+    <v-progress-linear indeterminate></v-progress-linear>
+  </v-container>
+
+  <v-container v-else>
     <v-row no-gutters>
       <v-col cols="12" md="2">
         <v-sheet color="primary" class="pa-2 ma-2">
           ISP
         </v-sheet>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
           {{ this.geoLocationData?.traits?.isp }}
         </v-sheet>
@@ -59,7 +65,7 @@
           Country
         </v-sheet>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
           {{ this.geoLocationData?.country?.names?.en }}
         </v-sheet>
@@ -72,7 +78,7 @@
           City
         </v-sheet>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
           {{ this.geoLocationData?.city?.names?.en }}
         </v-sheet>
@@ -85,7 +91,7 @@
           State
         </v-sheet>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="6">
         <v-sheet color="secondary" class="pa-2 ma-2">
           {{ this.geoLocationData?.subdivisions[0]?.iso_code }}
         </v-sheet>
