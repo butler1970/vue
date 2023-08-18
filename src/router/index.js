@@ -5,6 +5,7 @@ import MyIPPage from "@/components/MyIPPage.vue";
 import Base64Page from "@/components/Base64Page.vue";
 import EncodeURLPage from "@/components/EncodeURLPage.vue"
 import AsciiPage from "@/components/AsciiPage.vue"
+import HackerNoonPage from "@/components/HackerNoonPage.vue";
 
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: "/ascii",
         name: "Ascii",
         component: AsciiPage,
+    },
+    {
+        path: "/hacker-noon",
+        name: "HackerNoon",
+        component: HackerNoonPage,
     },
 ];
 

@@ -41,13 +41,14 @@
 export default {
   name: 'App',
   data: () => ({
-    drawer: false,
+    drawer: null,
     items: [
       {title: 'Home', icon: 'mdi-home', route: '/'},
       {title: 'MyIP', icon: 'mdi-tools', route: '/my-ip'},
       {title: 'Base64', icon: 'mdi-tools', route: '/base64'},
       {title: 'EncodeURL', icon: 'mdi-tools', route: '/encode-url'},
       {title: 'Ascii', icon: 'mdi-tools', route: '/ascii'},
+      {title: 'HackerNoon', icon: 'mdi-head-check', route: '/hacker-noon'},
       {title: 'About', icon: 'mdi-account-box', route: '/about'},
     ],
   }),
