@@ -78,9 +78,9 @@ export default {
     this.load()
   },
   watch: {
-    feed(newValue) {
-      console.log(newValue);
-    }
+    // feed(newValue) {
+    //   console.log(newValue);
+    // }
   },
   methods: {
     async load() {
