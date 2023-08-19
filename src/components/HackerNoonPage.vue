@@ -13,14 +13,25 @@
   </v-container>
 
   <v-container v-else>
-    <v-container v-for="item in feed.items" :key="item.id">
+    <v-container v-for="(item, index) in feed.items" :key="index">
       <v-sheet elevation="4">
         <v-row>
           <v-col cols="12" md="2">
             <v-sheet color="primary" class="pa-2 ma-2">Title</v-sheet>
           </v-col>
-          <v-col cols="12" md="10">
+          <v-col cols="12" md="6">
             <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.title }}</v-sheet>
+          </v-col>
+          <v-col cols="12" md="4">
+            <v-sheet color="secondary" class="pa-2 ma-2"><v-img :src="getImageUrl(item.media.thumbnail.url)" width="300"/></v-sheet>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" md="2">
+            <v-sheet color="primary" class="pa-2 ma-2">Author</v-sheet>
+          </v-col>
+          <v-col cols="12" md="10">
+            <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.author }}</v-sheet>
           </v-col>
         </v-row>
         <v-row>
@@ -37,6 +48,14 @@
           </v-col>
           <v-col cols="12" md="10">
             <v-sheet color="secondary" class="pa-2 ma-2 text-left"><a target="_blank" :href="item.link">{{ item.link }}</a></v-sheet>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" md="2">
+            <v-sheet color="primary" class="pa-2 ma-2">Categories</v-sheet>
+          </v-col>
+          <v-col cols="12" md="10">
+            <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.category.join(', ') }}</v-sheet>
           </v-col>
         </v-row>
       </v-sheet>
@@ -58,9 +77,17 @@ export default {
   created() {
     this.load()
   },
+  watch: {
+    feed(newValue) {
+      console.log(newValue);
+    }
+  },
   methods: {
     async load() {
       this.feed = await parse('https://api.internettools.app/api/feed/hackernoon');
+    },
+    getImageUrl(input) {
+      return input.replace(/https:\/\/hackernoon.com\//g, '');
     }
   }
 }
