@@ -3,7 +3,7 @@
     <h1>Home</h1>
 
     <p>Welcome to <strong>InternetTools.app</strong>! I've constructed this site to sharpen my development skills and
-      experiment with some technologies which have become popular as of late to see what all of the buzz is about.  In
+      experiment with some technologies which have become popular as of late to see what all of the buzz is about. In
       particular I'm interested in understanding how <strong>Docker</strong> containers can be used in place of the
       typical virtual machine in a development environment to keep development dependencies off of the host machine.</p>
 
@@ -19,11 +19,38 @@
       shell scripts to get at information that is commonly needed in your everyday IT life. Please, use the menu bar on
       your left to access these tools. If you find a need for other tools which are not provided here please consider
       leaving the administrator some helpful feature requests and we'll be happy to accommodate you.</p></div>
+
+
+  <v-container v-if="this.quoteOfTheDay != null">
+    <v-row>
+      <v-col col="12">
+        <v-sheet v-html="quoteOfTheDay[0].h" class="pa-2 ma-2 text-h3"></v-sheet>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
+const axios = require('axios');
+
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
+  data() {
+    return {
+      quoteOfTheDay: null,
+    }
+  },
+  created() {
+    this.loadQuoteOfTheDay();
+  },
+  methods: {
+    loadQuoteOfTheDay() {
+      axios.get('https://api.internettools.app/api/proxy/zenquote/random')
+          .then(response => {
+            this.quoteOfTheDay = response.data
+          });
+    }
+  }
 }
 </script>
 
