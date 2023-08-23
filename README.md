@@ -22,6 +22,28 @@ docker compose up
 ngrok http --host-header=rewrite https://localhost
 ```
 
+## Renewing SSL Certificate
+### Using [Certbot DNS Authenticator for Google Domains](https://github.com/aaomidi/certbot-dns-google-domains)
+```
+docker run \
+  -v '/var/lib/letsencrypt:/var/lib/letsencrypt' \
+  -v '/etc/letsencrypt:/etc/letsencrypt' \
+  --cap-drop=all \
+  ghcr.io/aaomidi/certbot-dns-google-domains:latest \
+  certbot certonly \
+  --authenticator 'dns-google-domains' \
+  --dns-google-domains-credentials '/var/lib/letsencrypt/dns_google_domains_credentials.ini' \
+  --server 'https://acme-v02.api.letsencrypt.org/directory' \
+  --non-interactive \
+  --dns-google-domains-zone 'example.com' \
+  -d 'internettools.app' \
+  -d '*.internettools.app'
+```
+### If that doesn't work try using the manual DNS option
+```
+sudo certbot certonly --manual --preferred-challenges=dns
+```
+
 # References
 - [Vue Router](https://router.vuejs.org/)
 - [Vuetify](https://vuetifyjs.com/en/)
