@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import {resolveApiUrl} from "@/util";
+
 const axios = require('axios');
 
 export default {
@@ -45,7 +47,7 @@ export default {
   },
   methods: {
     loadQuoteOfTheDay() {
-      axios.get('https://api.internettools.app/api/proxy/zenquote/random')
+      axios.get(resolveApiUrl('proxy/zenquote/random'))
           .then(response => {
             this.quoteOfTheDay = response.data
           });

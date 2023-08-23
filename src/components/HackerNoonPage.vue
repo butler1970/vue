@@ -65,6 +65,8 @@
 </template>
 
 <script>
+import {resolveApiUrl} from "@/util";
+
 const { parse } = require('rss-to-json');
 
 export default {
@@ -84,7 +86,7 @@ export default {
   },
   methods: {
     async load() {
-      this.feed = await parse('https://api.internettools.app/api/feed/hackernoon');
+      this.feed = await parse(resolveApiUrl('feed/hackernoon'));
     },
     getImageUrl(input) {
       return input.replace(/https:\/\/hackernoon.com\//g, '');

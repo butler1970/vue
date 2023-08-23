@@ -109,6 +109,7 @@
 <script>
 import axios from 'axios';
 import { Clipboard } from 'v-clipboard';
+import {resolveApiUrl} from "@/util";
 
 export default {
   name: 'MyIPPage',
@@ -126,7 +127,7 @@ export default {
   watch: {
     ipify_ipv4(newValue, oldValue) {
       console.log(`ipv4 changed from ${oldValue} to ${newValue}... getting geo location data...`);
-      axios.post('https://api.internettools.app/api/ip/location', {ip: this.ipify_ipv4})
+      axios.post(resolveApiUrl('ip/location'), {ip: this.ipify_ipv4})
           .then(response => {
             this.geoLocationData = response.data;
           });
