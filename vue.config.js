@@ -11,8 +11,8 @@ module.exports = defineConfig({
         'internettools.app'
     ],
     https: {
-      key: fs.readFileSync('./privkey.pem'),
-      cert: fs.readFileSync('./fullchain.pem'),
+      key: fs.readFileSync('./server.key'),
+      cert: fs.readFileSync('./server.pem'),
     }
   }
 })
