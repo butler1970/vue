@@ -5,10 +5,10 @@ const fs = require('fs');
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  // devServer: {
-  //   https: {
-  //     key: fs.readFileSync('./_wildcard.localhost+1-key.pem'),
-  //     cert: fs.readFileSync('./_wildcard.localhost+1.pem'),
-  //   }
-  // }
+  devServer: {
+    https: {
+      key: fs.readFileSync('./privkey.pem'),
+      cert: fs.readFileSync('./fullchain.pem'),
+    }
+  }
 })
