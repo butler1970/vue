@@ -58,7 +58,7 @@
             <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.category.join(', ') }}</v-sheet>
           </v-col>
         </v-row>
-        <v-btn @click="handleClick()">Share</v-btn>
+        <v-btn @click="handleClick(item)">Share</v-btn>
       </v-sheet>
     </v-container>
   </v-container>
@@ -102,8 +102,8 @@ export default {
     getImageUrl(input) {
       return input.replace(/https:\/\/hackernoon.com\//g, '');
     },
-    handleClick() {
-      console.log("Click!");
+    handleClick(input) {
+      console.log("Click!", input);
     }
   }
 }
