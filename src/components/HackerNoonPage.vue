@@ -19,11 +19,14 @@
           <v-col cols="12" md="2">
             <v-sheet color="primary" class="pa-2 ma-2">Title</v-sheet>
           </v-col>
-          <v-col cols="12" md="6">
+          <v-col cols="12" md="4">
             <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.title }}</v-sheet>
           </v-col>
           <v-col cols="12" md="4">
             <v-sheet color="secondary" class="pa-2 ma-2"><v-img :src="getImageUrl(item.media.thumbnail.url)" width="300"/></v-sheet>
+          </v-col>
+          <v-col cols="12" md="2" v-if="canShare">
+            <v-sheet color="secondary" class="pa-2 ma-2"><v-btn @click="shareContent(item)"></v-btn></v-sheet>
           </v-col>
         </v-row>
         <v-row>
@@ -62,10 +65,15 @@
     </v-container>
   </v-container>
 
+  <v-snackbar v-model="sharedToast.show" :timeout="sharedToast.timeout">
+    {{ sharedToast.message }}
+  </v-snackbar>
+
 </template>
 
 <script>
 import {resolveApiUrl} from "@/util";
+import {canShare} from "@/util";
 
 const { parse } = require('rss-to-json');
 
@@ -73,7 +81,13 @@ export default {
   name: 'HackerNoonPage',
   data() {
     return {
+      canShare: canShare(),
       feed: null,
+      sharedToast: {
+        show: false,
+        timeout: 2000,
+        message: '',
+      },
     }
   },
   created() {
@@ -87,6 +101,20 @@ export default {
   methods: {
     async load() {
       this.feed = await parse(resolveApiUrl('feed/hackernoon'));
+    },
+    async shareContent(input) {
+      try {
+        await navigator.share({
+          title: input.title,
+          text: "Check this out!",
+          url: input.link
+        });
+        this.sharedToast.message = "Shared!";
+        this.sharedToast.show = true;
+      } catch (error) {
+        this.sharedToast.message = "Error!";
+        this.sharedToast.show = true;
+      }
     },
     getImageUrl(input) {
       return input.replace(/https:\/\/hackernoon.com\//g, '');
