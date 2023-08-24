@@ -70,7 +70,7 @@
             <v-sheet color="secondary" class="pa-2 ma-2 float-right">
               <v-btn @click="shareOnFacebook(item)"><v-icon>mdi-facebook</v-icon></v-btn>
               <v-btn @click="shareOnTwitter(item)"><v-icon>mdi-twitter</v-icon></v-btn>
-              <v-btn @click="shareWithWebApi(item)" v-if="canShare"><v-icon class="fas fa-share"></v-icon></v-btn>
+              <v-btn @click="shareWithWebApi(item)" v-if="canShare"><v-icon>mdi-share</v-icon></v-btn>
             </v-sheet>
           </v-col>
         </v-row>
