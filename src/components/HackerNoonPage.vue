@@ -104,6 +104,13 @@ export default {
     },
     handleClick(input) {
       console.log("Click!", input);
+      navigator.share({
+        title: input.title,
+        text: 'Check it out!',
+        url: input.link,
+      })
+          .then(() => console.log('Shared successfully'))
+          .catch(error => console.error('Error sharing:', error));
     }
   }
 }
