@@ -22,7 +22,15 @@
           <v-col cols="12" md="4">
             <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.title }}</v-sheet>
           </v-col>
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="2" v-if="canShare">
+            <v-sheet>
+              <v-btn @click="handleClick(item)">Share</v-btn>
+            </v-sheet>
+          </v-col>
+          <v-col cols="12" md="4" v-if="canShare">
+            <v-sheet color="secondary" class="pa-2 ma-2"><v-img :src="getImageUrl(item.media.thumbnail.url)" width="300"/></v-sheet>
+          </v-col>
+          <v-col cols="12" md="6" v-if="!canShare">
             <v-sheet color="secondary" class="pa-2 ma-2"><v-img :src="getImageUrl(item.media.thumbnail.url)" width="300"/></v-sheet>
           </v-col>
         </v-row>
@@ -58,7 +66,6 @@
             <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.category.join(', ') }}</v-sheet>
           </v-col>
         </v-row>
-        <v-btn @click="handleClick(item)">Share</v-btn>
       </v-sheet>
     </v-container>
   </v-container>
