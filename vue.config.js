@@ -8,7 +8,8 @@ module.exports = defineConfig({
   devServer: {
     allowedHosts: [
         'localhost',
-        'internettools.app'
+        'dev.internettools.app',
+        'internettools.app',
     ],
     https: {
       key: fs.readFileSync('./server.key'),
