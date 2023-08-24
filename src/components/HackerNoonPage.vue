@@ -103,6 +103,7 @@ export default {
       this.feed = await parse(resolveApiUrl('feed/hackernoon'));
     },
     shareContent(input) {
+      if (navigator.share !== undefined) {
         navigator.share({
           title: input.title,
           text: "Check this out!",
@@ -114,6 +115,7 @@ export default {
           this.sharedToast.message = error;
           this.sharedToast.show = true;
         });
+      }
     },
     getImageUrl(input) {
       return input.replace(/https:\/\/hackernoon.com\//g, '');
