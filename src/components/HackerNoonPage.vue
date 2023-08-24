@@ -13,7 +13,6 @@
   </v-container>
 
   <v-container v-else>
-    <v-btn @click="handleClick()">Share</v-btn>
     <v-container v-for="(item, index) in feed.items" :key="index">
       <v-sheet elevation="4">
         <v-row>
@@ -59,6 +58,7 @@
             <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.category.join(', ') }}</v-sheet>
           </v-col>
         </v-row>
+        <v-btn @click="handleClick()">Share</v-btn>
       </v-sheet>
     </v-container>
   </v-container>
