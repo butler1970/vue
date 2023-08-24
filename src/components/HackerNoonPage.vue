@@ -26,7 +26,7 @@
             <v-sheet color="secondary" class="pa-2 ma-2"><v-img :src="getImageUrl(item.media.thumbnail.url)" width="300"/></v-sheet>
           </v-col>
           <v-col cols="12" md="2" v-if="canShare">
-            <v-sheet color="secondary" class="pa-2 ma-2"><v-btn @click="shareContent(item)"></v-btn></v-sheet>
+            <v-sheet color="secondary" class="pa-2 ma-2"><v-btn>Share</v-btn></v-sheet>
           </v-col>
         </v-row>
         <v-row>
