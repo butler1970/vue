@@ -13,7 +13,7 @@
   </v-container>
 
   <v-container v-else>
-    <v-btn @click="shareContent()">Share</v-btn>
+<!--    <v-btn @click="shareContent()">Share</v-btn>-->
     <v-container v-for="(item, index) in feed.items" :key="index">
       <v-sheet elevation="4">
         <v-row>
