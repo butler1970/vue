@@ -23,7 +23,7 @@
             <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.title }}</v-sheet>
           </v-col>
           <v-col cols="12" md="4">
-            <v-sheet color="secondary" class="pa-2 ma-2 float-right">
+            <v-sheet color="secondary" class="pa-2 ma-2">
               <v-img :src="getImageUrl(item.media.thumbnail.url)" width="300"/>
             </v-sheet>
           </v-col>
