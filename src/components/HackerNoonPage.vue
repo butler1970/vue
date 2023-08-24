@@ -88,7 +88,6 @@ export default {
   },
   created() {
     this.load();
-    this.canShare = canShare();
   },
   watch: {
     // feed(newValue) {
