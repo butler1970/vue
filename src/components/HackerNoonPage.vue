@@ -104,21 +104,21 @@ export default {
     async load() {
       this.feed = await parse(resolveApiUrl('feed/hackernoon'));
     },
-    shareContent() {
-      // if (navigator.share !== undefined) {
-      //   navigator.share({
-      //     title: input.title,
-      //     text: "Check this out!",
-      //     url: input.link
-      //   }).then(() => {
-      //     this.sharedToast.message = "Shared!";
-      //     this.sharedToast.show = true;
-      //   }).catch(error => {
-      //     this.sharedToast.message = error;
-      //     this.sharedToast.show = true;
-      //   });
-      // }
-    },
+    // shareContent() {
+    //   if (navigator.share !== undefined) {
+    //     navigator.share({
+    //       title: input.title,
+    //       text: "Check this out!",
+    //       url: input.link
+    //     }).then(() => {
+    //       this.sharedToast.message = "Shared!";
+    //       this.sharedToast.show = true;
+    //     }).catch(error => {
+    //       this.sharedToast.message = error;
+    //       this.sharedToast.show = true;
+    //     });
+    //   }
+    // },
     getImageUrl(input) {
       return input.replace(/https:\/\/hackernoon.com\//g, '');
     }
