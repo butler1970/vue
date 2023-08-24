@@ -13,6 +13,7 @@
   </v-container>
 
   <v-container v-else>
+    <v-btn @click="handleClick()">Share</v-btn>
     <v-container v-for="(item, index) in feed.items" :key="index">
       <v-sheet elevation="4">
         <v-row>
@@ -100,6 +101,9 @@ export default {
     },
     getImageUrl(input) {
       return input.replace(/https:\/\/hackernoon.com\//g, '');
+    },
+    handleClick() {
+      console.log("Click!");
     }
   }
 }
