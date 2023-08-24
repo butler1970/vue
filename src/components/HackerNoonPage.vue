@@ -26,7 +26,7 @@
             <v-sheet color="secondary" class="pa-2 ma-2"><v-img :src="getImageUrl(item.media.thumbnail.url)" width="300"/></v-sheet>
           </v-col>
           <v-col cols="12" md="2" v-if="canShare">
-            <v-sheet color="secondary" class="pa-2 ma-2"><v-btn @click="shareContent()">Share</v-btn></v-sheet>
+            <v-sheet color="secondary" class="pa-2 ma-2"><v-btn @click="shareContent(item)">Share</v-btn></v-sheet>
           </v-col>
         </v-row>
         <v-row>
@@ -81,7 +81,7 @@ export default {
   name: 'HackerNoonPage',
   data() {
     return {
-      canShare: canShare(),
+      canShare: false,
       feed: null,
       sharedToast: {
         show: false,
@@ -91,7 +91,8 @@ export default {
     }
   },
   created() {
-    this.load()
+    this.load();
+    this.canShare = canShare();
   },
   watch: {
     // feed(newValue) {
@@ -102,20 +103,20 @@ export default {
     async load() {
       this.feed = await parse(resolveApiUrl('feed/hackernoon'));
     },
-    shareContent() {
-      // if (navigator.share !== undefined) {
-      //   navigator.share({
-      //     title: input.title,
-      //     text: "Check this out!",
-      //     url: input.link
-      //   }).then(() => {
-      //     this.sharedToast.message = "Shared!";
-      //     this.sharedToast.show = true;
-      //   }).catch(error => {
-      //     this.sharedToast.message = error;
-      //     this.sharedToast.show = true;
-      //   });
-      // }
+    shareContent(input) {
+      if (navigator.share !== undefined) {
+        navigator.share({
+          title: input.title,
+          text: "Check this out!",
+          url: input.link
+        }).then(() => {
+          this.sharedToast.message = "Shared!";
+          this.sharedToast.show = true;
+        }).catch(error => {
+          this.sharedToast.message = error;
+          this.sharedToast.show = true;
+        });
+      }
     },
     getImageUrl(input) {
       return input.replace(/https:\/\/hackernoon.com\//g, '');
