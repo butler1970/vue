@@ -35,7 +35,7 @@ docker run \
   --dns-google-domains-credentials '/var/lib/letsencrypt/dns_google_domains_credentials.ini' \
   --server 'https://acme-v02.api.letsencrypt.org/directory' \
   --non-interactive \
-  --dns-google-domains-zone 'example.com' \
+  --dns-google-domains-zone 'internettools.app' \
   -d 'internettools.app' \
   -d '*.internettools.app'
 ```
