@@ -104,7 +104,7 @@ export default {
   },
   created() {
     this.load();
-    this.canShare = true; //navigator.share !== undefined;
+    this.canShare = navigator.share !== undefined;
   },
   watch: {
     // feed(newValue) {
