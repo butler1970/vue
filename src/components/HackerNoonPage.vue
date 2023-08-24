@@ -56,14 +56,6 @@
         </v-row>
         <v-row>
           <v-col cols="12" md="2">
-            <v-sheet color="primary" class="pa-2 ma-2">Categories</v-sheet>
-          </v-col>
-          <v-col cols="12" md="10">
-            <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.category.join(', ') }}</v-sheet>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="12" md="2">
             <v-sheet color="primary" class="pa-2 ma-2">Share</v-sheet>
           </v-col>
           <v-col cols="12" md="10">
@@ -72,6 +64,14 @@
               <v-btn @click="shareOnTwitter(item)"><v-icon>mdi-twitter</v-icon></v-btn>
               <v-btn @click="shareWithWebApi(item)" v-if="canShare"><v-icon>mdi-share</v-icon></v-btn>
             </v-sheet>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" md="2">
+            <v-sheet color="primary" class="pa-2 ma-2">Categories</v-sheet>
+          </v-col>
+          <v-col cols="12" md="10">
+            <v-sheet color="secondary" class="pa-2 ma-2 text-left">{{ item.category.join(', ') }}</v-sheet>
           </v-col>
         </v-row>
       </v-sheet>
