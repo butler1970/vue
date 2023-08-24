@@ -24,7 +24,7 @@
           </v-col>
           <v-col cols="12" md="2" v-if="canShare">
             <v-sheet>
-              <v-btn @click="handleClick(item)">Share</v-btn>
+              <v-btn @click="shareArticle(item)">Share</v-btn>
             </v-sheet>
           </v-col>
           <v-col cols="12" md="4" v-if="canShare">
@@ -110,7 +110,7 @@ export default {
     getImageUrl(input) {
       return input.replace(/https:\/\/hackernoon.com\//g, '');
     },
-    handleClick(input) {
+    shareArticle(input) {
       navigator.share({
         title: input.title,
         text: 'Check it out!',
