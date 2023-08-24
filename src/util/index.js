@@ -8,7 +8,7 @@ export function getRandomValue(max) {
 }
 
 export function canShare() {
-    if (navigator.canShare) {
+    if (navigator.share !== undefined && navigator.canShare !== undefined) {
         // The canShare function is supported in this browser.
         // You can use it to check if specific data can be shared.
         return navigator.canShare(this.shareContent);
