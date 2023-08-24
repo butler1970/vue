@@ -111,14 +111,19 @@ export default {
       return input.replace(/https:\/\/hackernoon.com\//g, '');
     },
     handleClick(input) {
-      console.log("Click!", input);
       navigator.share({
         title: input.title,
         text: 'Check it out!',
         url: input.link,
       })
-          .then(() => console.log('Shared successfully'))
-          .catch(error => console.error('Error sharing:', error));
+          .then(() => {
+            this.sharedToast.message = "Shared!";
+            this.sharedToast.show = true;
+          })
+          .catch(error => {
+            this.sharedToast.message = error;
+            this.sharedToast.show = true;
+          });
     }
   }
 }
