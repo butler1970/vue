@@ -102,19 +102,18 @@ export default {
     async load() {
       this.feed = await parse(resolveApiUrl('feed/hackernoon'));
     },
-    async shareContent(input) {
-      try {
-        await navigator.share({
+    shareContent(input) {
+        navigator.share({
           title: input.title,
           text: "Check this out!",
           url: input.link
+        }).then(() => {
+          this.sharedToast.message = "Shared!";
+          this.sharedToast.show = true;
+        }).catch(error => {
+          this.sharedToast.message = error;
+          this.sharedToast.show = true;
         });
-        this.sharedToast.message = "Shared!";
-        this.sharedToast.show = true;
-      } catch (error) {
-        this.sharedToast.message = "Error!";
-        this.sharedToast.show = true;
-      }
     },
     getImageUrl(input) {
       return input.replace(/https:\/\/hackernoon.com\//g, '');
