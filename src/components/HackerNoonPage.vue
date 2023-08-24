@@ -96,6 +96,7 @@ export default {
   },
   created() {
     this.load();
+    this.canShare = navigator.share !== undefined;
   },
   watch: {
     // feed(newValue) {
