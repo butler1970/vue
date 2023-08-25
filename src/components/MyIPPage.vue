@@ -126,15 +126,11 @@ export default {
   },
   watch: {
     ipify_ipv4(newValue, oldValue) {
-      console.log(`ipv4 changed from ${oldValue} to ${newValue}... getting geo location data...`);
       axios.post(resolveApiUrl('ip/location'), {ip: this.ipify_ipv4})
           .then(response => {
             this.geoLocationData = response.data;
           });
     },
-    geoLocationData(newValue) {
-      console.log('Geo location data has been updated...', newValue);
-    }
   },
   created() {
     this.getIpAddress()

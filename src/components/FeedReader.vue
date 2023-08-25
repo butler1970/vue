@@ -124,7 +124,6 @@ export default {
           });
     },
     getImageUrl(input) {
-      console.log("getImageUrl(): input = ", input);
       if (input.media.thumbnail && input.media.thumbnail.url) {
         const url = input.media.thumbnail.url;
 
