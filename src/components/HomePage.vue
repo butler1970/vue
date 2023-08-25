@@ -55,6 +55,8 @@
       </v-col>
     </v-row>
   </v-container>
+
+  <FeedReader feedDomain="butler1970.com"></FeedReader>
 </template>
 
 <script>
