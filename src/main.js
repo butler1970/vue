@@ -11,7 +11,11 @@ import router from "./router";
 // Vuetify
 import vuetify from "./theme";
 
+// Custom component for reading feeds and rendering them.
+import FeedReader from "@/components/FeedReader.vue";
+
 createApp(App)
+    .component('FeedReader', FeedReader)
     .use(router)
     .use(vuetify)
     .use(VueGtag, { config: { id: "G-D8LQJ991NR"}})
