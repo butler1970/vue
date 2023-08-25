@@ -14,8 +14,12 @@ import vuetify from "./theme";
 // Custom component for reading feeds and rendering them.
 import FeedReader from "@/components/FeedReader.vue";
 
+// Custom component encapsulating the markdown-it library.
+import Markdown from "@/components/Markdown.vue";
+
 createApp(App)
     .component('FeedReader', FeedReader)
+    .component('Markdown', Markdown)
     .use(router)
     .use(vuetify)
     .use(VueGtag, { config: { id: "G-D8LQJ991NR"}})
