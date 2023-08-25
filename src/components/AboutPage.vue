@@ -9,7 +9,7 @@
     <h1>Robert Butler</h1>
     <h4>Senior Software Engineer / Senior PHP Developer</h4>
 
-    <Markdown :source="body" class="text-left"></Markdown>
+    <MarkDown :source="body" class="text-left"></MarkDown>
 
     <v-container>
       <h3>Contact Information</h3>
@@ -22,11 +22,8 @@
 </template>
 
 <script>
-import Markdown from "@/components/Markdown.vue";
-
 export default {
   name: 'AboutPage',
-  components: {Markdown},
   data() {
     return {
       body: `
@@ -103,10 +100,5 @@ p {
   text-justify: inter-word;
   margin-bottom: 10px;
 }
-
-p.markdown {
-  color: red;
-}
-
 </style>
 
