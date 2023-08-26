@@ -9,6 +9,8 @@
     <a target="_blank" href="https://en.wikipedia.org/wiki/URL_encoding">URL encoding</a>
   </p>
 
+  <v-divider/>
+
   <v-container>
     <v-row no-gutters>
       <v-col cols="12">

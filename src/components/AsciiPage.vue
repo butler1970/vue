@@ -6,6 +6,8 @@
     those codes which are considered printable.  To learn more about ASCII you can visit the Wikipedia article,
     <a target="_blank" href="https://en.wikipedia.org/wiki/ASCII">ASCII</a></p>
 
+  <v-divider/>
+
   <v-container>
     <v-row>
       <v-col cols="3" md="2"><v-sheet color="primary" class="pa-2 ma-2">Decimal</v-sheet></v-col>

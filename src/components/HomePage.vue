@@ -47,6 +47,7 @@
     </v-container>
   </div>
 
+  <v-divider/>
 
   <v-container v-if="this.quoteOfTheDay != null">
     <v-row>
@@ -55,6 +56,8 @@
       </v-col>
     </v-row>
   </v-container>
+
+  <v-divider/>
 
   <FeedReader feedDomain="butler1970.com"></FeedReader>
 </template>

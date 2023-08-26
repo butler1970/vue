@@ -8,6 +8,8 @@
     <a target="_blank" href="https://hackernoon.com">HackerNoon.</a>
   </p>
 
+  <v-divider/>
+
   <FeedReader feedDomain="hackernoon.com"></FeedReader>
 </template>
 
