@@ -19,6 +19,8 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p 7822 -t rsa server.internettools.app >> ~/.ssh/known_hosts
           echo $(cat ~/.ssh/id_rsa)
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Check ssh keys
         run: |
@@ -27,5 +29,3 @@ jobs:
       - name: Pull Main Branch on Remote Host
         run: |
           ssh -v -p 7822 root@server.internettools.app "cd ~/projects/vue && git pull origin main"
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
