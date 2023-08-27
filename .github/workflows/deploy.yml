@@ -19,10 +19,16 @@ jobs:
           chmod 700 ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p 7822 -t rsa server.internettools.app >> ~/.ssh/known_hosts
+          ssh-keyscan -p $HOST_PORT -t rsa $HOST_NAME >> ~/.ssh/known_hosts
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOST_NAME: ${{ secrets.HOST_NAME }}
+          HOST_PORT: ${{ secrets.HOST_PORT }}
 
       - name: Pull Main Branch on Remote Host
         run: |
-          ssh -v -p 7822 root@server.internettools.app "cd ~/projects/vue && git pull origin main"
+          ssh -p $HOST_PORT $USER@$HOST_NAME "cd ~/projects/vue && git pull origin main"
+        env:
+          HOST_NAME: ${{ secrets.HOST_NAME }}
+          HOST_PORT: ${{ secrets.HOST_PORT }}
+          USER: ${{ secrets.USER }}
