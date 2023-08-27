@@ -23,11 +23,9 @@ jobs:
           chmod 644 ~/.ssh/id_rsa.pub          
           ssh-keyscan -p 7822 -t rsa server.internettools.app >> ~/.ssh/known_hosts
 
-      - name: Set up SSH Agent
+      - name: Check ssh keys
         run: |
           cat ~/.ssh/id_rsa
-          eval $(ssh-agent -s)
-          ssh-add ~/.ssh/id_rsa
 
       - name: Pull Main Branch on Remote Host
         run: |
