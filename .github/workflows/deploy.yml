@@ -24,7 +24,6 @@ jobs:
 
       - name: Pull Main Branch on Remote Host
         run: |
-          echo "$SSH_PRIVATE_KEY"
           ssh -p 7822 root@server.internettools.app "cd ~/projects/vue && git pull origin main"
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
